@@ -25,7 +25,9 @@ Alunos:
 
 - Comandos de iluminação
 
-TERMINAR
+    - Ligar luz ambiente: Número 1
+    - Ligar luz azul: Número 2
+    - Ligar luz vermelha: Número 3
 '''
 from sys import argv
 import sys
@@ -53,6 +55,12 @@ def som_abrir():
     pygame.mixer.music.play(loops=0)
 def som_fechar():
     pygame.mixer.music.load("fechar_porta.mp3")
+    pygame.mixer.music.play(loops=0)
+def som_ligar():
+    pygame.mixer.music.load("acender_luz.mp3")
+    pygame.mixer.music.play(loops=0)
+def som_desligar():
+    pygame.mixer.music.load("apagar_luz.mp3")
     pygame.mixer.music.play(loops=0)
 
 viewport = (800, 600)
@@ -83,17 +91,23 @@ abrir_banheiro = False
 abrir_quarto = False
 abrir_quarto2 = False
 
-som_porta_abrir1 = 0
-som_porta_abrir2 = 0
-som_porta_abrir3 = 0
-som_porta_fechar1 = 0
-som_porta_fechar2 = 0
-som_porta_fechar3 = 0
+som_porta_abrir1 = False
+som_porta_abrir2 = False
+som_porta_abrir3 = False
+som_porta_fechar1 = False
+som_porta_fechar2 = False
+som_porta_fechar3 = False
+
+
+contador_easteregg = 0
 
 # Estado da iluminação
 estadoluz0 = 1
 estadoluz1 = 0
 estadoluz2 = 0
+som_ligar_luz0 = False
+som_ligar_luz1 = False
+som_ligar_luz2 = False
 
 
 #rx, ry = (0,0)
@@ -212,18 +226,34 @@ while True:
             if e.key == K_1:  # Tecla 1
                 if estadoluz0 == 0:
                     estadoluz0 = 1
+                    if som_ligar_luz0==False:
+                        som_ligar()
+                        som_ligar_luz0=True
                 else:
                     estadoluz0 = 0
+                    som_desligar()
+                    som_ligar_luz0 = False
+
             if e.key == K_2:  # Tecla 2
                 if estadoluz1 == 0:
                     estadoluz1 = 1
+                    if som_ligar_luz1 == False:
+                        som_ligar()
+                        som_ligar_luz1 = True
                 else:
                     estadoluz1 = 0
+                    som_desligar()
+                    som_ligar_luz1 = False
             if e.key == K_3:  # Tecla 3
                 if estadoluz2 == 0:
                     estadoluz2 = 1
+                    if som_ligar_luz2 == False:
+                        som_ligar()
+                        som_ligar_luz2 = True
                 else:
                     estadoluz2 = 0
+                    som_desligar()
+                    som_ligar_luz2 = False
 
         elif e.type == KEYUP:  # Evento de soltar as teclas
             if e.key == K_w:  # Tecla W
