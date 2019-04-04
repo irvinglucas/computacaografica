@@ -1,11 +1,35 @@
-# CG-House
+# Projeto Casa - Computação gráfica
 
 * python 3
 * pygame
 * pyopengl
 
-### Getting started
 
-To create an object from an .obj file just type as " my_obj = OBJ("my_obj.obj", swapyz=True) " where my_obj.obj is the obj file name.
+Alunos:
+- Irving Lucas da Silva Melo
+- Antônio Andrade
+- Jonathas Augusto
 
-To render an .OBJ file call "render()" from util.py passing the obj, a list with x, y and z transfor positions, a list with x, y and z rotation as well as a list with x, y and z scale.
+- Este projeto consiste na modelagem de uma casa simples:
+    - Sala de estar
+    - Dois quartos
+    - Banheiro
+    - Cozinha
+
+
+- Comandos de interação do mouse:
+    - Apertar e segurar botão esquerdo: rotação da casa na cena
+    - Apertar e segurar botão direito: translação da casa pela
+    - Scroll do mouse: zoom in/zoom out
+
+- Comandos de interação do cubo no teclado:
+    - W: para frente
+    - A: para esquerda
+    - D: para direita
+    - S: para trás
+
+- Comandos de iluminação
+
+    - Ligar luz ambiente: Número 1
+    - Ligar luz azul: Número 2
+    - Ligar luz vermelha: Número 3
