@@ -16,6 +16,7 @@ Alunos:
 - Comandos de interação do mouse:
     - Apertar e segurar botão esquerdo: rotação da casa na cena
     - Apertar e segurar botão direito: translação da casa pela
+    - Scroll do mouse: zoom in/zoom out
 
 - Comandos de interação do cubo no teclado:
     - W: para frente
