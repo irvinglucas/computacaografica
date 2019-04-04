@@ -176,6 +176,8 @@ tapete = OBJ("tapete.obj")
 
 cama1 = OBJ("bed.obj")
 wardrobe1 = OBJ("wardrobe.obj")
+#dog = OBJ("13463_Australian_Cattle_Dog_v3.obj", scale=[.06, .06, .06], pos=[5, 0, 9], rot=[-90, 0, 0])
+#tapetedog = OBJ("tapete.obj", pos=[-4, 0, -3], scale=[1.5, 1.5, 2])
 cama2 = OBJ("bed.obj", pos=[0, 0, -10])
 wardrobe2 = OBJ("wardrobe.obj", pos=[0, 0, -10])
 
@@ -355,6 +357,7 @@ while True:
     door2.render()
     door3.render()
 
+
     # Animação das portas
     # banheiro
     porta_banheiro.render()
@@ -437,6 +440,8 @@ while True:
     clock_p2.render()
     clock_p1.rot[0] -= 1
     clock_p2.rot[0] -= 2
+    #dog.render()
+    #tapetedog.render()
 
     # Cozinha
     pia.render()
